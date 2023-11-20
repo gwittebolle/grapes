@@ -1,0 +1,16 @@
+<div class="container p-3 m-3 bg-light border">
+<h2>Ajouter un produit</h2>
+<%= simple_form_for [@wine] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :region %>
+  <%= f.input :domain %>
+  <%= f.input :description %>
+  <%= f.input :year %>
+  <%= f.input :price %>
+  <%= f.input :stock_quantity %>
+  <%= f.input :category %>
+  <%= f.input :grape_variety %>
+  <%= f.input :alcohol_level %>
+  <%= f.submit "Valider", class: "btn btn-dark" %>
+<% end %>
+</div>
