@@ -3,7 +3,11 @@
       <div class="col-sm-8">
         <div class="wine-card d-flex">
           <div>
-            <%= cl_image_tag @wine.photo.key, class:"card-product"%>
+           <% if @wine.photo.attached? %>
+              <%= cl_image_tag @wine.photo.key, class:"card-product"%>
+          <% else %>
+            <%= image_tag("wine.png", class: "card-product", alt: "dropdown menu") %>
+          <% end %>
           </div>
           <div class="p-3">
             <h1><%= @wine.name %></h1>
@@ -17,8 +21,13 @@
           <div class="col-sm-4 add-card d-flex flex-column justify-content-around">
             <div class="seller-infos d-flex justify-content-center mt-5 ">
                 <div class="avatar">
-                   <%=cl_image_tag @wine.user.avatar.key,
+                  <% if @wine.user.avatar.attached? %>
+             <%=cl_image_tag @wine.user.avatar.key,
                     :width=>50, :height=>50, :gravity=>"face", :radius=>"max", :crop=>"fill"%>
+          <% else %>
+            <%= image_tag("default_picture.jpeg", class: "avatar", alt: "dropdown menu") %>
+          <% end %>
+
                 </div>
                   <p class="p-3 grey-text "><%= @wine.user.email %></p>
             </div>
