@@ -1,0 +1,10 @@
+
+<% current_user.wines.each do |wine| %>
+  <ul>
+    <% @keys.each do |key| %>
+      <% unless wine[key].blank? %>
+        <li><%= wine[key] %></li>
+      <% end %>
+    <% end  %>
+  </ul>
+<% end %>
