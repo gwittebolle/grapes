@@ -29,14 +29,15 @@
           <% end %>
 
                 </div>
-                  <p class="p-3 grey-text "><%= @wine.user.email %></p>
+                  <p class="p-3 grey-text "><%= @wine.user.username %></p>
             </div>
             <div>
              <p class="p-3 text-center"> propose <%= @wine.name %></p>
             </div>
            <div class="justify-content-around">
             <h2 class="text-center mt-3 mb-3"> <%= @wine.price %>€</h2>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex flex-column justify-content-center">
+                  <div class="btn btn-primary mb-3"> Afficher le numéro (to do avec AJAX)</div>
                   <%= link_to "Choisir cette bouteille", "#", class:"btn btn-dark mb-3" %>
                 </div>
            </div>

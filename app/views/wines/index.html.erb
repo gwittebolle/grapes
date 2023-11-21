@@ -1,23 +1,19 @@
-<div>
-<%= link_to "Ajouter une offre (à supprimer dans les prochaines versions)", new_wine_path, class:"btn btn-dark" %>
-<br>
-<br>
-</div>
+<div class="container shadow-sm p-5 m-0 mx-auto bg-light">
+  <div data-controller="search">
+    <div id="container wine-search-container p-0 m-0" class="border-bottom">
+    <h2>Recherche</h2>
+    <input type="text" id="wine-search-input" class="input-group mb-3" data-search-target="search" data-action="input->search#search">
+    </div>
+      <div class="container py-2 m-0">
+        <h3>Liste des vins disponibles à la vente</h3>
+            <div class="row justify-content-between">
+                <% @wines.each do |wine| %>
+                    <%= render partial: "pages/wine_card", locals: {wine: wine} %>
+                <% end %>
 
-<div data-controller="search">
-  <div id="container wine-search-container p-3 m-3">
-  <h2>Recherche</h2>
-  <input type="text" id="wine-search-input" class="input-group mb-3" data-search-target="search" data-action="input->search#search">
-</div>
-    <h3>Liste des vins disponibles à la vente</h3>
-      <div class="container p-0 m-0">
-        <div class="row justify-content-between">
-            <% @wines.each do |wine| %>
-                <%= render partial: "pages/wine_card", locals: {wine: wine} %>
-            <% end %>
+            </div>
+          </div>
 
-        </div>
-      </div>
-
-</div>
+    </div>
+  </div>
 </div>
