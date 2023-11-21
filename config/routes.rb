@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get 'profile', action: :show, controller: 'dashboards'
 
   # Defines the root path route ("/")
+
   # root "posts#index"
 end

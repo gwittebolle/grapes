@@ -1,27 +1,23 @@
-<div class="container">
 <div>
-<%= link_to "Ajouter une offre", new_wine_path, class:"btn btn-dark" %>
-</div>
-  <div class="row justify-content-between ">
-      <% @wines.each do |wine| %>
-
-          <%= wine.name %>
-          <%= wine.price %>
-          <% if wine.photo.attached? %>
-            <%= cl_image_tag(wine.photo.key, height: 200, width: 200, gravity: "auto", crop: "fill") %>
-          <% else %>
-            <%= image_tag('wine_default.jpg', height: 200, width: 200) %>
-          <% end %>
-          <%= link_to "En savoir plus", wine_path(wine), class:"btn btn-dark" %>
-          <%= link_to "Acheter", new_wine_booking_path, class:"btn btn-primary" %>
-      <% end %>
-  </div>
+<%= link_to "Ajouter une offre (à supprimer dans les prochaines versions)", new_wine_path, class:"btn btn-dark" %>
+<br>
+<br>
 </div>
 
-<div>
-TEST IMAGE DE PROFIL A SUPPRIMER
-<% if current_user %>
-<%= current_user.avatar.attached? ? cl_image_tag(current_user.avatar.key, :height=>200, :gravity=>"auto", :crop=>"fill") : "pas de photo" %>
-<% end %>
+<div data-controller="search">
+  <div id="container wine-search-container p-3 m-3">
+  <h2>Recherche</h2>
+  <input type="text" id="wine-search-input" class="input-group mb-3" data-search-target="search" data-action="input->search#search">
+</div>
+    <h3>Liste des vins disponibles à la vente</h3>
+      <div class="container p-0 m-0">
+        <div class="row justify-content-between">
+            <% @wines.each do |wine| %>
+                <%= render partial: "pages/wine_card", locals: {wine: wine} %>
+            <% end %>
 
+        </div>
+      </div>
+
+</div>
 </div>
