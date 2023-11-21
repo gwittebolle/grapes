@@ -13,5 +13,4 @@ class DashboardsController < ApplicationController
             "alcohol_level"
             ]
   end
-
 end
