@@ -4,6 +4,7 @@
 </div>
   <div class="row justify-content-between ">
       <% @wines.each do |wine| %>
+
           <%= wine.name %>
           <%= wine.price %>
           <% if wine.photo.attached? %>
