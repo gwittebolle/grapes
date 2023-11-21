@@ -1,6 +1,6 @@
 <a href="<%= wine_path(wine) %>">
 <div class="wine-card p-0 m-3 d-flex justify-content-between"  data-search-target="card">
- <%= wine.photo.attached? ? cl_image_tag(wine.photo.key, :width => 300, :height => 250, :crop => "fill") : image_tag('wine_default.jpg', width: 300, height: 250) %>
+ <%= wine.photo.attached? ? cl_image_tag(wine.photo.key, :width => 300, :height => 250, :crop => "fill") : image_tag('wine.png', width: 300, height: 250) %>
   <div class="card-body p-3 m-3 d-flex flex-column justify-content-between">
     <div>
       <h4><strong><%= wine.name %></strong></h4>
