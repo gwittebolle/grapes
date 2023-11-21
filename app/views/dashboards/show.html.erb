@@ -6,5 +6,7 @@
         <li><%= wine[key] %></li>
       <% end %>
     <% end  %>
+    <li><button type="button" class="btn btn-dark"><%= link_to "Delete this wine", wine_path(wine), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{wine.name} from your wine list?"} %></button></li>
   </ul>
+
 <% end %>
