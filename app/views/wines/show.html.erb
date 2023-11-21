@@ -1,1 +1,37 @@
-<%= render 'shared/wine_card', wine: @wine %>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="wine-card d-flex">
+          <div>
+            <%= cl_image_tag @wine.photo.key, class:"card-product"%>
+          </div>
+          <div class="p-3">
+            <h1><%= @wine.name %></h1>
+            <p><i class="fa-solid fa-wine-glass"></i>  <%= @wine.region %></p>
+            <p><%= @wine.description %></p>
+            <p class="grey-text"><em><%= @wine.alcohol_level %>%</em></p>
+
+          </div>
+        </div>
+      </div>
+          <div class="col-sm-4 add-card d-flex flex-column justify-content-around">
+            <div class="seller-infos d-flex justify-content-center mt-5 ">
+                <div class="avatar">
+                   <%=cl_image_tag @wine.user.avatar.key,
+                    :width=>50, :height=>50, :gravity=>"face", :radius=>"max", :crop=>"fill"%>
+                </div>
+                  <p class="p-3 grey-text "><%= @wine.user.email %></p>
+            </div>
+            <div>
+             <p class="p-3 text-center"> propose <%= @wine.name %></p>
+            </div>
+           <div class="justify-content-around">
+            <h2 class="text-center mt-3 mb-3"> <%= @wine.price %>€</h2>
+                <div class="d-flex justify-content-center">
+                  <%= link_to "Choisir cette bouteille", "#", class:"btn btn-dark mb-3" %>
+                </div>
+           </div>
+
+          </div>
+   </div>
+</div>
