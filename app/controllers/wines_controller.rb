@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
- before_action :set_wine, only: [:show]
+  before_action :set_wine, only: [:show]
 
   def index
     @wines = Wine.all
@@ -23,14 +23,14 @@ class WinesController < ApplicationController
     end
   end
 
-private
+  private
 
   def set_wine
     @wine = Wine.find(params[:id])
   end
 
   def wine_params
-   params.require(:wine).permit(:name, :region, :domain, :description, :year, :price, :stock_quantity, :category, :grape_variety, :alcohol_level)
+    params.require(:wine).permit(:name, :region, :domain, :description, :year, :price,
+                                 :stock_quantity, :category, :grape_variety, :alcohol_level, :photo)
   end
-
 end
