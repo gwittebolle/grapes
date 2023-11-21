@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :wines
   has_many :bookings
+  has_one_attached :avatar
+
+  ## Validations
+  validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes },
+            file_content_type: { allow: ['image/jpeg','image/jpg', 'image/png', 'image/gif'] }
 end
