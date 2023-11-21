@@ -6,7 +6,16 @@ class WinesController < ApplicationController
   end
 
   def show
-
+      @keys = ["name",
+       "price",
+       "region",
+       "domain",
+       "description",
+       "year",
+       "stock_quantity",
+       "category",
+       "grape_variety",
+       "alcohol_level" ]
   end
 
   def new
