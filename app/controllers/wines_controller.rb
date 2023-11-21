@@ -23,6 +23,12 @@ class WinesController < ApplicationController
     end
   end
 
+  def destroy
+    @wine = Wine.find(params[:id])
+    @wine.destroy
+    redirect_to profile_path, status: :see_other
+  end
+
   private
 
   def set_wine
