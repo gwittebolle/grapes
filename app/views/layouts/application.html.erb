@@ -11,12 +11,12 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column justify-content-between vh-100">
+    <div class="d-flex flex-column vh-100">
       <%= render "shared/navbar" %>
 
-        <div class="container p-3">
-          <%= yield %>
-        </div>
+      <div class="container p-3">
+        <%= yield %>
+      </div>
 
       <%= render "shared/footer" %>
     </div>
