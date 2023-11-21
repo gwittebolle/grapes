@@ -1,0 +1,16 @@
+<% current_user.wines.each do |wine| %>
+  <ul>
+    <li><%= wine.name %></li>
+    <li><%= wine.price %></li>
+    <li><%= wine.name %></li>
+    <li><%= wine.region %></li>
+    <li><%= wine.domain %></li>
+    <li><%= wine.description %></li>
+    <li><%= wine.year %></li>
+    <li><%= wine.price %></li>
+    <li><%= wine.stock_quantity %></li>
+    <li><%= wine.category %></li>
+    <li><%= wine.grape_variety %></li>
+    <li><%= wine.alcohol_level %></li>
+  </ul>
+<% end %>
