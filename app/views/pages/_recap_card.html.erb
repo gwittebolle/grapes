@@ -12,29 +12,28 @@
         </div>
     <div class=" container d-flex flex-column justify-content-between">
           <div>
-          <h5><b>Récapitulatif des informations</b></h5>
+          <h4> Votre choix</h4>
           </div>
           <table class="table-white mt-0">
-            <tbody>
+            <tbody >
                 <tr>
-                  <td><strong>Contact</strong></td>
-                  <td><%= wine.user.first_name %> <%= wine.user.last_name %></td>
+                  <td><h6 ><strong><%= wine.name %> - <%= wine.domain %></strong></h6></td>
+                </tr>
+                <tr  class="d-flex pb-2 justify-content-center">
+                  <td></td>
+                  <td ><%= wine.user.first_name %> <%= wine.user.last_name %></td>
+                </tr>
+                <tr class="d-flex ">
+                  <td><i class="fa-solid fa-phone"> </i></td>
+                  <td> <%= wine.user.phone_number %></td>
                 </tr>
                 <tr>
-                  <td><strong>Numéro de téléphone</strong></td>
-                  <td><%= wine.user.phone_number %></td>
-                </tr>
-                <tr>
-                  <td><strong>Addresse</strong></td>
+                  <td><i class="fa-solid fa-location-dot"></i></td>
                   <td><%= wine.user.address %></td>
                 </tr>
-                <tr>
-                  <td><strong>Nom du produit</strong></td>
-                  <td><%= wine.name %></td>
-                </tr>
-                <tr>
-                  <td><strong>Prix</strong></td>
-                  <td><%= wine.price %> €</td>
+                <tr class="d-flex text-center justify-content-around">
+                  <td><strong>TOTAL </strong></td>
+                  <td><strong><%= wine.price %> €</strong></td>
                 </tr>
             </tbody>
             </table>
