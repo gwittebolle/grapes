@@ -6,9 +6,7 @@ class Wine < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validates :domain, presence: true
-  validates :region, presence: true
   validates :year, presence: true
-  validates :alcohol_level, presence: true
   validates :category, presence: true
 
 

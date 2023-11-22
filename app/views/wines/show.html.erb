@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex justify-content-around">
   <div class="row">
-    <div class="col-sm-8 wine-card d-flex ">
+    <div class="col-sm-10 wine-show d-flex  ">
       <div>
         <% if @wine.photo.attached? %>
         <%= cl_image_tag @wine.photo.key, class:"card-product"%>
@@ -11,8 +11,12 @@
       <div class="p-3">
         <p><%=@wine.domain %> - <%= @wine.region %></p>
         <h1><strong><%= @wine.name %> </strong> <%= @wine.year %></h1>
-        <p><%= @wine.description %></p>
+        <div class="description mt-3">
+          <p class="card-subtitle text-muted"><%= @wine.description %></p>
+        </div>
+        <div class="variety-infos mt-4">
         <p><%= @wine.grape_variety %> • <%= @wine.category %> • <em><%= @wine.alcohol_level %> % </em></p>
+        </div>
       </div>
     </div>
   </div>
@@ -22,14 +26,23 @@
         <div class="text-center">
           <h2> <%= @wine.price %>€</h2>
         </div>
-      <div class="div-btn">
+      <div class=" d-flex justify-content-center">
         <div class="btn btn-dark">
-            <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
+            <%= link_to "Choisir", new_wine_booking_path(@wine, @booking), class:"btn btn-dark " %>
         </div>
       </div>
-      <div class="infos-seller d-flex">
-        <div class=""><p>by <%= @wine.user.username %></p></div>
-        <div class="">avatar</div>
+      <div class="infos-seller d-flex m-3">
+
+       <div class="avatar">
+          <% if @wine.user.avatar.attached? %>
+          <%=cl_image_tag @wine.user.avatar.key,
+                                  width: 30, height: 30, gravity: "face", radius:"max", crop: "fill" %>
+          <% else %>
+          <%= image_tag("default_picture.jpeg", class: "avatar", alt: "dropdown menu") %>
+          <% end %>
+      </div>
+        <div class="username text-center"><p><%= @wine.user.email %></p></div>
+
       </div>
     </div>
   </div>
