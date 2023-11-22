@@ -1,0 +1,78 @@
+.my-wine-card {
+  border: 1px #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+
+
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+
+
+
+  p {
+    color: #666;
+    margin-bottom: 8px;
+
+    strong {
+      font-weight: bold;
+      color: #444;
+    }
+  }
+
+  a {
+    color : $black;
+
+    &:hover {
+      color : $bordeaux;
+    }
+  }
+
+  .price {
+    font-size: 24px;
+    }
+
+  .btn-info {
+    color: $light-grey;
+    background-color: $bordeaux;
+    border-radius: 8px;
+    padding: 8px;
+    border-style: solid;
+
+    &:hover {
+      color : $bordeaux;
+      background-color: $light-grey;
+      border-color: $bordeaux;
+    }
+  }
+
+  .btn-delete {
+    color: $white-wine;
+    background-color: $dark-grey;
+    border-radius: 8px;
+    padding: 8px;
+    border-style: solid;
+
+    &:hover {
+      color : $dark-grey;
+      background-color: $white-wine;
+      border-color: $dark-grey;
+    }
+  }
+
+  .btn-add {
+    color: $light-grey;
+    background-color: $bordeaux;
+    border-radius: 8px;
+    padding: 8px;
+    border-style: solid;
+
+    &:hover {
+      color : $bordeaux;
+      background-color: $light-grey;
+      border-color: $bordeaux;
+    }
+  }
+
+}
