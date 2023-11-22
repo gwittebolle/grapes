@@ -18,16 +18,17 @@
   </div>
   <div class="row">
     <div class="col-sm-8 add-card d-flex flex-column justify-content-around">
-      <div class="text-center ">Acheter</div>
-      <div class="">7.9</div>
+      <div class="text-center "><h6>Coup de coeur pour </h6><h5 class="text-muted"><%= @wine.name %></h5></div>
+        <div class="text-center">
+          <h2> <%= @wine.price %>€</h2>
+        </div>
       <div class="div-btn">
         <div class="btn btn-dark">
             <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
         </div>
       </div>
       <div class="infos-seller d-flex">
-        <div class="">proposé par</div>
-        <div class="">username</div>
+        <div class=""><p>by <%= @wine.user.username %></p></div>
         <div class="">avatar</div>
       </div>
     </div>
