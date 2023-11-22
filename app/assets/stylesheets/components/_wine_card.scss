@@ -47,6 +47,20 @@
     }
   }
 
+  .btn-info-secondary {
+    color: $dark-grey;
+    background-color: $white-wine;
+    border-radius: 8px;
+    padding: 8px;
+    border-style: solid;
+
+    &:hover {
+      color : $bordeaux;
+      background-color: $light-grey;
+      border-color: $bordeaux;
+    }
+  }
+
   .btn-delete {
     color: $white-wine;
     background-color: $dark-grey;
