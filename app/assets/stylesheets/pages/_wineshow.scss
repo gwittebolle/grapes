@@ -2,7 +2,6 @@
     height: 100%;
     width: 200px;
     object-fit: cover;
-    border-radius: 4px;
 }
 
 .add-card {
@@ -11,9 +10,46 @@
   padding: 10px;
   margin: 100px;
   border-radius: 5px;
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .grey-text {
   color: grey;
+
+
+}
+
+.btn-dark {
+  border-radius: 50px;
+  background-color: $bordeaux ;
+  border: 1px ;
+  &:hover {
+   background-color : $black;
+  }
+}
+
+.infos-seller {
+  height: 8px;
+  border-top: 1px solid grey;
+  padding: 10px;
+}
+
+.wine-show {
+  border: 1px #ccc;
+  padding: 10px;
+  margin: 100px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.username {
+  color: $bordeaux;
+  font-size: 12px;
+  text-align: justify;
+  margin: 4px;
+  &:hover {
+    color : $black;
+   }
 }
