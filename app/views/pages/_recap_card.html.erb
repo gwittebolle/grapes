@@ -1,0 +1,57 @@
+<div class="container py-5">
+  <div class="row">
+      <div class="d-flex col-12 col-md-6 offset-lg-3 bg-white rounded p-3 shadow justify-content-between">
+        <div class="titre récap + images">
+        <div>
+            <% if wine.photo.attached? %>
+              <%= cl_image_tag wine.photo.key, class:"card-product"%>
+            <% else %>
+              <%= image_tag("wine.png", class: "card-product", alt: "dropdown menu") %>
+            <% end %>
+        </div>
+        </div>
+    <div class=" container d-flex flex-column justify-content-between">
+          <div>
+          <h5><b>Récapitulatif des informations</b></h5>
+          </div>
+          <table class="table-white mt-0">
+            <tbody>
+                <tr>
+                  <td><strong>Contact</strong></td>
+                  <td><%= wine.user.first_name %> <%= wine.user.last_name %></td>
+                </tr>
+                <tr>
+                  <td><strong>Numéro de téléphone</strong></td>
+                  <td><%= wine.user.phone_number %></td>
+                </tr>
+                <tr>
+                  <td><strong>Addresse</strong></td>
+                  <td><%= wine.user.address %></td>
+                </tr>
+                <tr>
+                  <td><strong>Nom du produit</strong></td>
+                  <td><%= wine.name %></td>
+                </tr>
+                <tr>
+                  <td><strong>Prix</strong></td>
+                  <td><%= wine.price %> €</td>
+                </tr>
+            </tbody>
+            </table>
+          <div class="d-flex flex-column">
+            <div>
+            <%= simple_form_for [@wine, @booking] do |f| %>
+              <%= f.submit "Envoyer une demande", class: "shadow-sm btn btn-danger mb-1 w-100" %>
+            <% end %>
+            </div>
+            <%= link_to "Retour", wine_path(wine), class:"shadow-sm btn btn-info" %>
+
+
+
+
+
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>

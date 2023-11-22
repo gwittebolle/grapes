@@ -21,7 +21,9 @@
       <div class="text-center ">Acheter</div>
       <div class="">7.9</div>
       <div class="div-btn">
-        <div class="btn btn-dark"></div>
+        <div class="btn btn-dark">
+            <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
+        </div>
       </div>
       <div class="infos-seller d-flex">
         <div class="">proposé par</div>
