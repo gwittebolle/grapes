@@ -3,7 +3,7 @@ class WinesController < ApplicationController
 
   def index
     @wines = Wine.all
-    @users = User.joins(:wines).distinct.where.not(id: current_user.id)
+    user_signed_in? ? @users = User.joins(:wines).distinct.where.not(id: current_user.id) : @users = User.joins(:wines).distinct
     @booking = Booking.new
     @markers = @users.geocoded.map do |user|
       {
