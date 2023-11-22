@@ -1,0 +1,6 @@
+<div class="booking-card">
+  <p>ID: <%= booking.id %></p>
+  <!-- Add other booking details as needed -->
+
+<%= link_to "Destroy", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur ?" }, class: 'btn btn-danger' %>
+</div>
