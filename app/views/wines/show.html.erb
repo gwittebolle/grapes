@@ -1,47 +1,35 @@
-<div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <div class="wine-card d-flex">
-          <div>
-           <% if @wine.photo.attached? %>
-              <%= cl_image_tag @wine.photo.key, class:"card-product"%>
-          <% else %>
-            <%= image_tag("wine.png", class: "card-product", alt: "dropdown menu") %>
-          <% end %>
-          </div>
-          <div class="p-3">
-            <h1><%= @wine.name %></h1>
-            <p><i class="fa-solid fa-wine-glass"></i>  <%= @wine.region %></p>
-            <p><%= @wine.description %></p>
-            <p class="grey-text"><em><%= @wine.alcohol_level %>%</em></p>
-
-          </div>
+<div class="container-fluid d-flex justify-content-around">
+  <div class="row">
+    <div class="col-sm-8 wine-card d-flex ">
+      <div>
+        <% if @wine.photo.attached? %>
+        <%= cl_image_tag @wine.photo.key, class:"card-product"%>
+        <% else %>
+        <%= image_tag("wine.png", class: "card-product", alt: "dropdown menu") %>
+        <% end %>
+      </div>
+      <div class="p-3">
+        <p><%=@wine.domain %> - <%= @wine.region %></p>
+        <h1><strong><%= @wine.name %> </strong> <%= @wine.year %></h1>
+        <p><%= @wine.description %></p>
+        <p><%= @wine.grape_variety %> • <%= @wine.category %> • <em><%= @wine.alcohol_level %> % </em></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 add-card d-flex flex-column justify-content-around">
+      <div class="text-center ">Acheter</div>
+      <div class="">7.9</div>
+      <div class="div-btn">
+        <div class="btn btn-dark">
+            <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
         </div>
       </div>
-          <div class="col-sm-4 add-card d-flex flex-column justify-content-around">
-            <div class="seller-infos d-flex justify-content-center mt-5 ">
-                <div class="avatar">
-                  <% if @wine.user.avatar.attached? %>
-                    <%=cl_image_tag @wine.user.avatar.key,
-                            :width=>50, :height=>50, :gravity=>"face", :radius=>"max", :crop=>"fill"%>
-                  <% else %>
-                    <%= image_tag("default_picture.jpeg", class: "avatar", alt: "dropdown menu") %>
-                  <% end %>
-
-                </div>
-                  <p class="p-3 grey-text "><%= @wine.user.username %></p>
-            </div>
-            <div>
-             <p class="p-3 text-center"> propose <%= @wine.name %></p>
-            </div>
-           <div class="justify-content-around">
-            <h2 class="text-center mt-3 mb-3"> <%= @wine.price %>€</h2>
-                <div class="d-flex flex-column justify-content-center">
-                  <div class="btn btn-primary mb-3"> Afficher le numéro (to do avec AJAX)</div>
-                  <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
-                </div>
-           </div>
-
-          </div>
-   </div>
+      <div class="infos-seller d-flex">
+        <div class="">proposé par</div>
+        <div class="">username</div>
+        <div class="">avatar</div>
+      </div>
+    </div>
+  </div>
 </div>

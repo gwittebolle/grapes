@@ -1,0 +1,24 @@
+<a href="<%= wine_path(wine) %>">
+  <div class="wine-card shadow-sm p-0 m-3 d-flex flex-column flex-sm-row">
+    <div class="mb-3 mb-md-0 text-center p-md-0 pt-3">
+      <%= wine.photo.attached? ? cl_image_tag(wine.photo.key, :width => 150, :height => 125, :crop => "fill") : image_tag('wine.png', width: 150, height: 125) %>
+    </div>
+    <div class="card-body p-3 m-3 d-flex flex-column justify-content-between">
+      <div>
+        <h4 class="mb-0"><strong><%= wine.name %></strong></h4>
+        <p class="mb-1"><%= wine.description %></i></p>
+        <p class="mb-1"><%= wine.year %></i></p>
+        <% if wine.stock_quantity == 1 %>
+          <p class="mb-1"><%= wine.stock_quantity %> bouteille</i></p>
+        <% else %>
+          <p class="mb-1"><%= wine.stock_quantity %> bouteilles</i></p>
+        <% end %>
+      </div>
+      <div class="d-flex flex-column flex-md-row justify-content-between mt-3 border-top pt-3">
+        <p class="card-title price mb-2"><strong><%= wine.price %> €</strong></p>
+        <%= link_to 'En savoir plus', wine_path(wine), class: "btn btn-info mt-2" %>
+        <%= link_to "Retirer ce vin", wine_path(wine), class: "btn btn-delete mt-2",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer ce #{wine.name} de votre cave?"} %>
+      </div>
+    </div>
+  </div>
+</a>
