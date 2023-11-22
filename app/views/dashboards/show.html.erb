@@ -19,3 +19,11 @@
     </div>
   </div>
 </div>
+
+
+
+<ul>
+  <% current_user.bookings.each do |booking| %>
+    <%= render partial: "dashboards/booking_card", locals: { booking: booking } %>
+  <% end %>
+</ul>
