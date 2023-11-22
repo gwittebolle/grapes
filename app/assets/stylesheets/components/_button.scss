@@ -1,16 +1,13 @@
-.button {
-  .btn-add {
-    color: $light-grey;
-    background-color: $bordeaux;
-    border-radius: 8px;
-    padding: 8px;
-    border-style: solid;
+.btn-add {
+  color: $light-grey;
+  background-color: $bordeaux;
+  border-radius: 8px;
+  padding: 8px;
+  border-style: solid;
 
-    &:hover {
-      color : $bordeaux;
-      background-color: $light-grey;
-      border-color: $bordeaux;
-    }
+  &:hover {
+    color : $bordeaux;
+    background-color: $light-grey;
+    border-color: $bordeaux;
   }
-
 }
