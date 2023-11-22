@@ -1,0 +1,11 @@
+.mapboxgl-ctrl-geocoder {
+  max-width: none !important;
+  width: 100% !important;
+  border: 1px solid lightgrey;
+  box-shadow: none !important;
+  background-color: transparent;
+
+  input {
+    background-color: var(--bs-body-bg)
+  }
+}

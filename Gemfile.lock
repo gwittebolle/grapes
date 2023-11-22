@@ -139,6 +139,7 @@ GEM
       mime-types (>= 1.0)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     http-accept (1.7.0)
@@ -312,6 +313,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   file_validators
   font-awesome-sass (~> 6.1)
+  geocoder
   importmap-rails
   jbuilder
   pg (~> 1.1)
