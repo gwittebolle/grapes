@@ -22,11 +22,11 @@
             <div class="seller-infos d-flex justify-content-center mt-5 ">
                 <div class="avatar">
                   <% if @wine.user.avatar.attached? %>
-             <%=cl_image_tag @wine.user.avatar.key,
-                    :width=>50, :height=>50, :gravity=>"face", :radius=>"max", :crop=>"fill"%>
-          <% else %>
-            <%= image_tag("default_picture.jpeg", class: "avatar", alt: "dropdown menu") %>
-          <% end %>
+                    <%=cl_image_tag @wine.user.avatar.key,
+                            :width=>50, :height=>50, :gravity=>"face", :radius=>"max", :crop=>"fill"%>
+                  <% else %>
+                    <%= image_tag("default_picture.jpeg", class: "avatar", alt: "dropdown menu") %>
+                  <% end %>
 
                 </div>
                   <p class="p-3 grey-text "><%= @wine.user.username %></p>
@@ -38,7 +38,7 @@
             <h2 class="text-center mt-3 mb-3"> <%= @wine.price %>€</h2>
                 <div class="d-flex flex-column justify-content-center">
                   <div class="btn btn-primary mb-3"> Afficher le numéro (to do avec AJAX)</div>
-                  <%= link_to "Choisir cette bouteille", "#", class:"btn btn-dark mb-3" %>
+                  <%= link_to "Choisir cette bouteille", new_wine_booking_path(@wine, @booking), class:"btn btn-dark mb-3" %>
                 </div>
            </div>
 
