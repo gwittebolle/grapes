@@ -1,2 +1,19 @@
-<h2><%= user.username %></h2>
-<p><%= user.address %></p>
+<div class="d-flex p-0 m-0 rounded justify-content-between">
+  <div>
+      <% if user.wines.first.photo.attached? %>
+        <%= cl_image_tag user.wine.photo.key, class:"avatar"%>
+      <% else %>
+        <%= image_tag("wine.png", class: "avatar", alt: "dropdown menu") %>
+      <% end %>
+  </div>
+  <div class=" container d-flex flex-column justify-content-between">
+    <h5><%= user.wines.first.name %></h5>
+    <strong> <%= user.wines.first.price %> €</strong>
+    <i> <%= user.address %> €</i>
+    <div>
+    <%= link_to wine_path(user.wines.first), class: "btn btn-info btn-sm shadow-none" do %>
+      <span>En savoir plus</span>
+    <% end %>
+    </div>
+  </div>
+</div>
