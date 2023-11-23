@@ -2,7 +2,7 @@ class WinesController < ApplicationController
   before_action :set_wine, only: [:show, :edit, :update]
 
   def index
-    @wines = Wine.all
+    @wines = Wine.left_outer_joins(:bookings).where('bookings.id IS NULL OR bookings.status NOT IN (?, ?)', 1, 3).distinct
     user_signed_in? ? @users = User.joins(:wines).distinct.where.not(id: current_user.id) : @users = User.joins(:wines).distinct
     @booking = Booking.new
     @markers = @users.geocoded.map do |user|

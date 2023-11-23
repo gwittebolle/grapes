@@ -22,6 +22,20 @@ class BookingsController < ApplicationController
     redirect_to profile_path
   end
 
+  def deliver
+    @booking = Booking.find(params[:id])
+    @booking.status = "delivered"
+    @booking.save
+    redirect_to profile_path
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.status = "rejected"
+    @booking.save
+    redirect_to profile_path
+  end
+
 
   def destroy
     @booking = Booking.find(params[:id])

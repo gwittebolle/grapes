@@ -12,7 +12,7 @@
         <div id="container wine-search-container p-2 m-2" class="border-bottom">
           <h5>A la recherche de la perle rare...</h5>
           <input type="text" id="wine-search-input"
-            placeholder=<%= Wine.first.name ? Wine.first.name : "Aucun vin disponible" %> class="input-group mb-3"
+           class="input-group mb-3"
             data-search-target="search" data-action="input->search#search">
         </div>
 
@@ -34,3 +34,8 @@
     </div>
   </div>
 </div>
+
+
+<% @wines.reverse.each do |wine| %>
+    <%= render partial: "pages/wine_card", locals: {wine: wine} %>
+<% end %>
