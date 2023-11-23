@@ -28,7 +28,15 @@
         </div>
       <div class=" d-flex justify-content-center">
         <div class="">
-            <%= link_to "Choisir", new_wine_booking_path(@wine, @booking), class:"btn btn-add " %>
+
+          <% if user_signed_in? %>
+            <%= link_to "Choisir", new_wine_booking_path(@wine, @booking), class:"btn btn-add "%>
+          <% else %>
+          <div class="d-flex shadow-sm flex-column justify-content-center bg-light">
+          <p>Disponible pour nos clients</p>
+          <%= link_to "Se connecter", new_user_session_path, class: "btn btn-add" %>
+          </div>
+          <% end %>
         </div>
       </div>
       <div class="infos-seller d-flex m-3">
