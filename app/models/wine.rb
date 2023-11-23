@@ -3,7 +3,7 @@ class Wine < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
-  REGION = ['Alsace', 'Bordeaux', 'Bourgogne', 'Champagne', 'Corse', 'Midi', 'Provence', 'Sud-ouest', 'Vallée de la Loire', 'Vallée du Rhône']
+  REGION = ['Alsace', 'Bordeaux', 'Bourgogne', 'Champagne', 'Corse', 'Midi', 'Provence', 'Sud-ouest', 'Vallée de la Loire', 'Vallée du Rhône', 'Autre']
 
   validates :name, presence: true
   validates :region, presence: true
