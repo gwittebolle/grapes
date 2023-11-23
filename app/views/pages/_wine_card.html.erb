@@ -7,7 +7,7 @@
 
   <div class="d-flex flex-column justify-content-center align-items-center">
     <h4><%= wine.name %></h4>
-    <h6> - <%= wine.price.to_i %> € - <h6>
+    <h6> - <%= number_with_precision(wine.price, precision: 2) %> € - <h6>
 
     <div class="btn">
            <% if wine.user == current_user %>

@@ -56,6 +56,7 @@ gem "sassc-rails"
 gem "devise"
 gem 'file_validators'
 gem 'geocoder'
+gem 'faker'
 
 
 
