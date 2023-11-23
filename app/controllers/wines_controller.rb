@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show]
+  before_action :set_wine, only: [:show, :edit, :update]
 
   def index
     @wines = Wine.all
@@ -31,6 +31,14 @@ class WinesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @wine.update(wine_params)
+    redirect_to profile_path
   end
 
   def destroy
