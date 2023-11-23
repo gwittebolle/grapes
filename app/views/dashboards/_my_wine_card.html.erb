@@ -16,7 +16,7 @@
         <% end %>
       </div>
       <div class="d-flex flex-column flex-md-row justify-content-between mt-3 border-top pt-3">
-        <p class="card-title price mb-2"><strong><%= wine.price.to_i %> €</strong></p>
+        <p class="card-title price mb-2"><strong><%= wine.price %> €</strong></p>
         <%= link_to 'Voir', wine_path(wine), class: "btn btn-info mt-2" %>
         <%= link_to 'Modifier', edit_wine_path(wine), class: "btn btn-info mt-2" %>
         <%= link_to 'Retirer', wine_path(wine), class: "btn btn-delete mt-2",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer ce #{wine.name} de votre cave?"} %>
