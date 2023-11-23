@@ -1,27 +1,32 @@
- <%= render partial: "pages/banner" %>
-<div class="container p-5 m-0 mx-auto bg-light">
-  <div data-controller="search">
-      <div class="bannerimage">
-      </div>
-      <div id="container wine-search-container p-0 m-0" class="border-bottom">
-      <h2>Recherche</h2>
-      <input type="text" id="wine-search-input" class="input-group mb-3" data-search-target="search" data-action="input->search#search">
-      </div>
-        <div class="container py-2 m-0">
-          <h3>Liste des vins disponibles à la vente</h3>
-              <div class="row justify-content-between">
-                  <% @wines.each do |wine| %>
-                      <%= render partial: "pages/wine_card", locals: {wine: wine} %>
-                  <% end %>
 
+<div class="container">
+<div class="row">
+<div class="col-lg-7 shadow-sm p-5 m-2 mx-auto bg-light">
+  <div data-controller="search">
+    <div id="container wine-search-container p-2 m-2" class="border-bottom">
+    <h4>Chercher un vin</h4>
+    <input type="text" id="wine-search-input" placeholder=<%= Wine.first.name ? Wine.first.name : "Aucun vin disponible" %> class="input-group mb-3" data-search-target="search" data-action="input->search#search">
+    </div>
+      <div class="container py-2 m-0">
+        <h3>Liste des vins disponibles à la vente</h3>
+            <div class="row justify-content-between">
+                <% @wines.each do |wine| %>
+                    <%= render partial: "pages/wine_card", locals: {wine: wine} %>
+                <% end %>
               </div>
     </div>
 
   </div>
+</div>
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="col-lg-4 shadow-sm container p-5 m-2 bg-light" style="position: -webkit-sticky; position: sticky; top: 0; right: 0; align-self: flex-start;">
+<h3>Trouve les vins près de chez toi</h3>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    class="map">
+  </div>
+</div>
 </div>
 </div>
