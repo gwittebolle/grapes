@@ -15,7 +15,20 @@
 
 }
 
+.wine-pic {
+  img {
+    object-fit: cover;
+    padding: 20px;
 
+  }
+}
+
+.cards {
+  display:grid;
+  border-style: none;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
 
 
 .wine-card {
