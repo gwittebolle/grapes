@@ -9,7 +9,7 @@
           <%= f.input :region, label: "Région viticole", as: :select, collection: region  %>
           <%= f.input :domain, label: "Nom du domaine/château" %>
           <%= f.input :description %>
-          <%= f.input :year, label: "Année", as: :select, collection: (1900..DateTime.now.year).to_a %>
+          <%= f.input :year, label: "Année", as: :select, collection: (2010..DateTime.now.year).to_a %>
           <%= f.input :price, label: "Prix" %>
           <%= f.input :stock_quantity, label: "Stock" %>
           <%= f.input :category, label: "Catégorie", as: :select, collection: %w[Blanc Rouge Rosé] %>
