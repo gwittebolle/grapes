@@ -1,0 +1,11 @@
+$carousel-transition-duration:  .3s;
+$carousel-transition-duration: transform 2s ease, opacity .5s ease-out;
+// Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
+
+.carousel-img {
+  object-fit: cover;
+  height: 350px;
+}
+.carousel-container {
+  width: 70%;
+}

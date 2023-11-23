@@ -18,11 +18,16 @@
       <% else %>
         <div class="d-flex flex-column gap-3">
           <% @bookings.each do |booking| %>
-              <%= render partial: "dashboards/my_wine_booking", locals: {wine: booking.wine} %>
+          <!-- Modification code par Gaëtan pour appeler la partiale avec booking (car besoin de booking pour le statut) -->
+              <%= render partial: "dashboards/my_wine_booking", locals: {booking: booking} %>
           <% end %>
         </div>
       <% end %>
     </div>
   </div>
-
 </div>
+
+    <div class="container shadow-sm bg-white p-3 mt-3">
+      <h3>Mes notifications</h3>
+    <%= render partial: "pages/status_seller", locals: {wines: current_user.wines} %>
+    </div>

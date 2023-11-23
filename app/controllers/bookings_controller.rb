@@ -15,12 +15,18 @@ class BookingsController < ApplicationController
     end
   end
 
+  def validate
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to profile_path
+  end
+
+
   def destroy
-raise
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to profile_path, status: :see_other
-
   end
 
 
