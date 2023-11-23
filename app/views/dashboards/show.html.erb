@@ -16,7 +16,7 @@
       <% if @bookings.blank? %>
         <p class="text-center mt-4 mb-4">vous n'avez pas de commande en cours</p>
       <% else %>
-        <div class="d-flex flex-column gap-3">
+        <div class="d-flex flex-column gap-3 mt-4 mb-4">
           <% @bookings.each do |booking| %>
           <!-- Modification code par Gaëtan pour appeler la partiale avec booking (car besoin de booking pour le statut) -->
               <%= render partial: "dashboards/dashboard_wine_booking", locals: {booking: booking} %>
