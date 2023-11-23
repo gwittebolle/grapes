@@ -1,10 +1,27 @@
+.card-cont {
+
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+
+}
+.btn-trans {
+  color : $black;
+
+
+  &:hover {
+    color : $dark-grey;
+  }
+
+}
+
+
+
+
 .wine-card {
   border: 1px #ccc;
-  padding: 10px;
   margin: 100px;
   border-radius: 5px;
-
-
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
