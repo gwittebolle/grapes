@@ -12,15 +12,17 @@
   </head>
 
   <body>
-    <div class="d-flex flex-column min-vh-100 justify-content-between">
-      <%= render "shared/navbar" %>
 
-      <div class="container flex-grow p-3">
-        <%= yield %>
+      <div class="d-flex flex-column min-vh-100 justify-content-between">
+        <%= render "shared/navbar" %>
+
+        <div class="container p-3">
+          <%= yield %>
+        </div>
+
+        <%= render "shared/footer" %>
       </div>
+      <%= render "shared/flashes" %>
 
-      <%= render "shared/footer" %>
-    </div>
-    <%= render "shared/flashes" %>
   </body>
 </html>

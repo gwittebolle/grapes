@@ -1,22 +1,23 @@
-<div class="container shadow-sm mt-2 bg-light">
-  <div class="row">
-    <div class="wines col-md-6">
+<div class="container">
+  <div class="d-flex m-3 justify-content-between">
+    <div class="">
       <h3 class="text-center">Mes vins à vendre</h3>
-      <%= link_to "Ajouter une offre", new_wine_path, class:"btn btn-add mt-2 mx-auto d-block " %>
-      <div class="d-flex flex-column gap-3">
+      <%= link_to "Ajouter une offre", new_wine_path, class:"btn btn-add mt-2  d-block m-3" %>
+
+      <div class="d-flex flex-column">
           <% current_user.wines.each do |wine| %>
-              <%= render partial: "dashboards/my_wine_card", locals: {wine: wine} %>
+            <%= render partial: "dashboards/my_wine_card", locals: {wine: wine} %>
           <% end %>
       </div>
     </div>
 
-    <div class="bookings col-md-6">
+    <div class="">
       <h3 class="text-center">Mes commandes</h3>
-      <%= link_to "Ajouter une réservation", "#", class:"btn btn-add mt-2 mx-auto d-block " %>
+      <%= link_to "Ajouter une réservation", "#", class:"btn btn-add mt-2  d-block m-3" %>
       <% if @bookings.blank? %>
         <p class="text-center mt-5">vous n'avez pas de commande en cours</p>
       <% else %>
-        <div class="d-flex flex-column gap-3">
+        <div class="d-flex flex-column">
           <% @bookings.each do |booking| %>
               <%= render partial: "dashboards/my_wine_booking", locals: {wine: booking.wine} %>
           <% end %>
@@ -24,5 +25,4 @@
       <% end %>
     </div>
   </div>
-
-</div>
+ </div>
