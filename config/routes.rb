@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :bookings do
     member do
       patch 'validate'
+      patch 'deliver'
+      patch 'reject'
     end
   end
 
