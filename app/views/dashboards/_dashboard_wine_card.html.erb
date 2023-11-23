@@ -1,0 +1,33 @@
+
+<div class="container">
+
+<div class="card-trip  ">
+   <%= wine.photo.attached? ? cl_image_tag(wine.photo.key,  :crop => "fill") : image_tag('wine.png', width: 250, height: 250) %>
+  <div class="card-trip-infos">
+    <div>
+    <%= link_to wine.name, wine_path(wine)%>
+      <h2><strong></strong></h2>
+       <% if wine.stock_quantity == nil %>
+          <p class="mb-1"><%= wine.stock_quantity %> non disponible</i></p>
+        <% elsif wine.stock_quantity == 1 %>
+          <p class="mb-1"><%= wine.stock_quantity %> bouteille en stock </i></p>
+        <% else %>
+          <p class="mb-1"><%= wine.stock_quantity %> bouteilles en stock </i></p>
+        <% end %>
+      <h2 class="card-trip-pricing"><%= wine.price %> € </h2>
+    </div>
+
+
+      <div class="">
+
+          <%= link_to '', wine_path(wine)%>
+           <%= link_to '', edit_wine_path(wine), class:"fa-solid fa-pen-to-square icon "%>
+           <%= link_to '', wine_path(wine), class: "mt-1 fa-solid fa-trash icon ",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer ce #{wine.name} de votre cave?"} %>
+
+        <div>
+
+        </div>
+      </div>
+  </div>
+</div>
+</div>
