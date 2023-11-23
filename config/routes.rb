@@ -12,7 +12,13 @@ Rails.application.routes.draw do
   end
   get 'profile', action: :show, controller: 'dashboards'
 
-  # Defines the root path route ("/")
-resources :bookings, only: :destroy
-  # root "posts#index"
+  resources :bookings, only: :destroy
+
+  resources :bookings do
+    member do
+      patch 'validate'
+    end
+  end
+
+
 end
