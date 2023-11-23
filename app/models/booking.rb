@@ -4,9 +4,9 @@ class Booking < ApplicationRecord
 
   enum status: {
     created: 0,
-    accepted: 2,
-    rejected: 3,
-    delivered: 4,
+    accepted: 1,
+    rejected: 2,
+    delivered: 3,
   }, _default: :created
 
 
