@@ -13,7 +13,7 @@
       <div class="d-flex flex-column flex-md-row justify-content-between mt-3 border-top pt-3">
         <p class="card-title price mb-2"><strong><%= number_with_precision(booking.wine.price, precision: 2) %> €</strong></p>
         <%= link_to 'En savoir plus', wine_path(booking.wine), class: "btn btn-info mt-2" %>
-        <%= link_to "Retirer ce vin", wine_path(booking.wine), class: "btn btn-delete mt-2",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer cette bouteille #{booking.wine.name} de votre cave?"} %>
+        <%= link_to "Annuler", booking_path(booking), class: "btn btn-delete mt-2",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment annuler cette commande : #{booking.wine.name} ?"} %>
       </div>
     </div>
   </div>

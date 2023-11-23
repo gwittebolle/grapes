@@ -1,0 +1,73 @@
+<!-- wines = current_user.wines -->
+<%# <div data-controller="notifications" class="container shadow-sm bg-white p-3 mt-3" data-notifications-target="content"> %>
+  <h3>Mes notifications</h3>
+  <div class="border-bottom mb-3">
+    <ol>
+    <!-- Compte le nb de status -->
+      <% total_bookings_to_validate_count = 0 %>
+      <% wines.each do |wine| %>
+        <% bookings_to_validate = wine.bookings.select { |booking| booking.status == "created" } %>
+        <% total_bookings_to_validate_count += bookings_to_validate.count %>
+      <% end %>
+        <!-- Afficher le titre avec le nombre avec des parenthèses -->
+      <h5>Commandes en attente de validation <%= total_bookings_to_validate_count.positive? ? "(#{total_bookings_to_validate_count})" : "" %></h5>
+        <!-- Affiche les bookings pour le statut en question -->
+      <% wines.each do |wine| %>
+        <% bookings_to_validate = wine.bookings.select { |booking| booking.status == "created" } %>
+        <% bookings_to_validate.each do |booking| %>
+          <li class="px-3"><%= status_text_seller(booking).html_safe %></li>
+        <% end %>
+      <% end %>
+    </ol>
+  </div>
+
+    <!--Même logique que le code précédent pour les autres statuts -->
+  <div class="border-bottom mb-3">
+    <ol>
+      <% total_bookings_to_deliver_count = 0 %>
+      <% wines.each do |wine| %>
+        <% bookings_to_deliver = wine.bookings.select { |booking| booking.status == "accepted" } %>
+        <% total_bookings_to_deliver_count += bookings_to_deliver.count %>
+      <% end %>
+      <h5>Commandes prêtes à être récupérées par le client <%= total_bookings_to_deliver_count.positive? ? "(#{total_bookings_to_deliver_count})" : "" %></h5>
+    <% wines.each do |wine| %>
+      <% bookings_to_deliver = wine.bookings.select { |booking| booking.status == "accepted" } %>
+      <% bookings_to_deliver.each do |booking| %>
+          <li class="px-3"><%= status_text_seller(booking).html_safe %></li>
+      <% end %>
+    <% end %>
+    </ol>
+  </div>
+  <div class="border-bottom mb-3">
+    <ol>
+      <% total_bookings_deliver_count = 0 %>
+      <% wines.each do |wine| %>
+        <% bookings_deliver = wine.bookings.select { |booking| booking.status == "delivered" } %>
+        <% total_bookings_deliver_count += bookings_deliver.count %>
+      <% end %>
+      <h5>Commandes délivrées avec succès <%= total_bookings_deliver_count.positive? ? "(#{total_bookings_deliver_count})" : "" %></h5>
+    <% wines.each do |wine| %>
+      <% bookings_delivered = wine.bookings.select { |booking| booking.status == "delivered" } %>
+      <% bookings_delivered.each do |booking| %>
+          <li class="px-3"><%= status_text_seller(booking).html_safe %></li>
+      <% end %>
+    <% end %>
+    </ol>
+  </div>
+  <div class="border-bottom mb-3">
+    <ol>
+      <% total_bookings_rejected_count = 0 %>
+      <% wines.each do |wine| %>
+        <% bookings_rejected = wine.bookings.select { |booking| booking.status == "rejected" } %>
+        <% total_bookings_rejected_count += bookings_rejected.count %>
+      <% end %>
+      <h5>Commandes refusées <%= total_bookings_rejected_count.positive? ? "(#{total_bookings_rejected_count})" : "" %></h5>
+    <% wines.each do |wine| %>
+      <% bookings_rejected = wine.bookings.select { |booking| booking.status == "rejected" } %>
+      <% wine.bookings.select { |booking| booking.status == "rejected" }.each do |booking| %>
+          <li class="px-3"><%= status_text_seller(booking).html_safe %></li>
+      <% end %>
+    <% end %>
+    </ol>
+  </div>
+</div>
