@@ -1,7 +1,7 @@
 require 'faker'
 
-Wine.destroy_all
-User.destroy_all
+# Wine.destroy_all
+# User.destroy_all
 
 
 # Seed pour la table Wines
