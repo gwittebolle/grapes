@@ -1,0 +1,9 @@
+<!-- wines = current_user.wines -->
+
+<ol>
+<% wines.each do |wine| %>
+  <% wine.bookings.each do |booking| %>
+      <li><%= status_text_seller(booking).html_safe %></li>
+  <% end %>
+<% end %>
+</ol>
