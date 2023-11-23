@@ -1,13 +1,12 @@
 .btn-add {
-    color: $light-grey;
-    background-color: $bordeaux;
-    border-radius: 8px;
-    padding: 8px;
-    border-style: solid;
+    color: $white;
+    background-color: $black;
+    border-radius: 30px;
+    padding: 10px;
+
 
     &:hover {
-      color : $bordeaux;
-      background-color: $light-grey;
-      border-color: $bordeaux;
-    }
+      color : $white;
+      background-color: $bordeaux;
   }
+}
