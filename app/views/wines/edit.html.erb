@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h2>Ajouter un produit</h2>
+        <h2 class="text-center">Modifier la fiche de votre vin</h2>
         <% region = ['Alsace', 'Bordeaux', 'Bourgogne', 'Champagne', 'Corse', 'Midi', 'Provence', 'Sud-ouest', 'Vallée de la Loire', 'Vallée du Rhône', 'Autre']  %>
         <%= simple_form_for [@wine] do |f| %>
           <%= f.input :name, label: "Nom du vin" %>
