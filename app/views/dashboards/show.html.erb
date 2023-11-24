@@ -1,25 +1,25 @@
 <div class="container shadow-sm mt-2 bg-light">
   <div class="row">
     <div class="wines col-md-6">
-      <h3 class="text-center">Mes vins à vendre</h3>
+      <h3 class="text-center p-3">Mes vins à vendre</h3>
       <%= link_to "Ajouter une offre", new_wine_path, class:"btn btn-add mt-2 mx-auto d-block " %>
-      <div class="d-flex flex-column gap-3">
+      <div class="dashboard-card mt-4 mb-4 ">
           <% current_user.wines.each do |wine| %>
-              <%= render partial: "dashboards/my_wine_card", locals: {wine: wine} %>
+              <%= render partial: "dashboards/dashboard_wine_card", locals: {wine: wine} %>
           <% end %>
       </div>
     </div>
 
     <div class="bookings col-md-6">
-      <h3 class="text-center">Mes commandes</h3>
+      <h3 class="text-center p-3">Mes commandes</h3>
       <%= link_to "Ajouter une réservation", wines_path, class:"btn btn-add mt-2 mx-auto d-block " %>
       <% if @bookings.blank? %>
-        <p class="text-center mt-5">vous n'avez pas de commande en cours</p>
+        <p class="text-center mt-4 mb-4">vous n'avez pas de commande en cours</p>
       <% else %>
-        <div class="d-flex flex-column gap-3">
+        <div class="d-flex flex-column gap-3 mt-4 mb-4">
           <% @bookings.each do |booking| %>
           <!-- Modification code par Gaëtan pour appeler la partiale avec booking (car besoin de booking pour le statut) -->
-              <%= render partial: "dashboards/my_wine_booking", locals: {booking: booking} %>
+              <%= render partial: "dashboards/dashboard_wine_booking", locals: {booking: booking} %>
           <% end %>
         </div>
       <% end %>

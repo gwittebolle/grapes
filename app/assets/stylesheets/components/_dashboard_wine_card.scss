@@ -1,0 +1,58 @@
+
+.dashboard-card {
+  display:grid;
+  border-style: none;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 8px;
+}
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 3px 8px rgba(144, 136, 136, 0.2);
+  width: 250px;
+  border-radius: 2%;
+  padding: 20px;
+  margin-bottom: 10%;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 13px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -30px;
+  width: 40px;
+}
+
+.icon {
+  color: $dark-grey;
+
+  &:hover {
+    color: $black;
+  }
+}
