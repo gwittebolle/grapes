@@ -1,0 +1,17 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title text-center w-100" id="exampleModalLabel">Confirmer votre réservation</h5>
+      </div>
+        <%= simple_form_for [@wine, @booking] do |f| %>
+          <%= f.submit "Envoyer une demande", class: "modal-btn-black mb-1 w-100" %>
+        <% end %>
+        <button type="button" class="modal-btn-grey" data-bs-dismiss="modal">Annuler</button>
+      </div>
+    </div>
+  </div>
+</div>

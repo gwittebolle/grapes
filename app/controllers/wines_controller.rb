@@ -29,7 +29,8 @@ class WinesController < ApplicationController
   end
 
   def show
-
+    @wine = Wine.find(params[:id])
+    @booking = Booking.new
   end
 
   def new

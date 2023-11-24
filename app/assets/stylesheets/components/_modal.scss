@@ -1,0 +1,23 @@
+.modal-btn-black {
+  color: $white;
+  background-color: $black;
+  padding: 10px;
+
+
+  &:hover {
+    color : $white;
+    background-color: $bordeaux;
+  }
+}
+
+.modal-btn-grey {
+  color: $black;
+  background-color: $light-grey;
+  padding: 10px;
+
+
+  &:hover {
+    color : $black;
+    background-color: $dark-grey;
+  }
+}
