@@ -5,17 +5,8 @@ export default class extends Controller {
   static targets = ["canvas"];
   ctx = null;
   spinAngleStart = 0;
-  // options = ["$100", "$10", "$25", "$250", "$30", "$1000", "$1", "$200", "$45", "$500", "$5", "$20", "Lose", "$1000000", "Lose", "$350", "$5", "$99"];
 
   // Get the image files from the avatars directory
-  imageFiles_virgile = ["144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg",
-  "144740857.jpg","144740857.jpg","144740857.jpg"];
-
 
   imageFiles = [
     "79454481 (1).jpg",
