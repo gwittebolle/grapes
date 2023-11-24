@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   resources :bookings, only: :destroy
+  resources :roulettes, only: :index
 
   resources :bookings do
     member do

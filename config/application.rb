@@ -13,7 +13,7 @@ module Grapes
       generate.test_framework :test_unit, fixture: false
     end
 
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :fr
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
