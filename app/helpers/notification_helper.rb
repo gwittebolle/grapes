@@ -3,10 +3,9 @@ module NotificationHelper
   def status_text_buyer(booking)
     case booking.status.to_sym
     when :created
-      "Offre transmise au vendeur"
+      "<p class='m-0'><strong>Offre transmise au vendeur!</strong></p>"
     when :accepted
-      "<p class='m-0'><strong>Offre acceptée par le vendeur !</strong></p>
-      <p class='m-0'><strong>Prochaines étape: </strong> Convenez d'un rendez-vous avec #{booking.wine.user.first_name} #{booking.wine.user.last_name}.</p>
+      "<p class='m-0'><strong>Offre acceptée par #{booking.wine.user.username} !</strong></p>
       <p class='m-0'><strong>Contact :</strong> #{booking.wine.user.phone_number}</p></p>"
     when :rejected
       "Désolé, votre offre a été rejetée."

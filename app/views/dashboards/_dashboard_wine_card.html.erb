@@ -8,7 +8,7 @@
   <div class="card-trip-infos">
     <div>
     <%= link_to wine.name, wine_path(wine)%>
-      <h2><strong></strong></h2>
+
        <% if wine.stock_quantity == nil %>
           <p class="mb-1"><%= wine.stock_quantity %> non disponible</i></p>
         <% elsif wine.stock_quantity == 1 %>
