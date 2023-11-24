@@ -2,23 +2,27 @@
 
 
 <div class="container d-flex justify-content-center">
-<div class="card-trip-dark  ">
-    <div class="p-1 text-center">
+<div class="card-trip-dark m-0 ">
+    <div class="d-flex justify-content-between">
+      <div>
+      <%= link_to '', booking_path(booking), class:"fa-solid fa-xmark icon-light",  data: { turbo_method: :delete, turbo_confirm: "Etes vous sûr ?"} %>
+     </div>
+      <div class="vignette text-center">
+              <%= image_tag("vignette_#{booking.status}.png")%>
+      </div>
+    </div>
+    <div class="p-1 mt-0 text-center">
       <h4> <%= booking.wine.name.capitalize%></h4>
     </div>
 
      <%= booking.wine.photo.attached? ? cl_image_tag(booking.wine.photo.key, :crop => "fill") : image_tag('wine.png', width: 250, height: 250) %>
 
   <div class="card-trip-dark-infos">
-
-      <div class="vignette text-center">
-             <%= image_tag("vignette_#{booking.status}.png")%>
-      </div>
           <p class="p-2">
             <%= status_text_buyer(booking).html_safe %>
           </p>
+
      </div>
 
         </div>
       </div>
-    </div>
