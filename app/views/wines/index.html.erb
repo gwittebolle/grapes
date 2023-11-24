@@ -30,13 +30,15 @@
       <div>
       <h3>A découvrir près de chez vous...</h3>
       <div style="width: 100%; height: 500px;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map">
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" class="map mb-3">
       </div>
       </div>
-      <div class= "d-flex shadow-sm flex-column m-2 p-1 justify-content-center">
+      <div class= "">
           <%= image_tag("Underwhere-logo-37c52c6eb31d36197e8fad3a72c78cbade51c9c93cf9da89be1bea74f38e41a7.png", width: 80, class: "img-fluid w-40") %>
           <p class="small">Contenu sponsorisé</p>
-          <%= image_tag('pub_sponso.png', height: 250) %>
+          <%= link_to "https://underwhere-app-9be84b4e5545.herokuapp.com/", target: '_blank' do %>
+            <%= image_tag 'pub_sponso.png', height: 250 %>
+          <% end %>
       </div>
     </div>
   </div>

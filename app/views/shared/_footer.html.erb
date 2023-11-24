@@ -1,19 +1,25 @@
-
-
-  <footer class="">
+<footer class="">
     <div class="container d-flex justify-content-center">
-      <button type="button" class="btn  btn-lg btn-floating mx-3" >
-        <i class="fab fa-facebook-f"></i>
-      </button>
-      <button type="button" class="btn  btn-lg btn-floating mx-3">
-        <i class="fab fa-youtube"></i>
-      </button>
-      <button type="button" class="btn btn-lg btn-floating mx-3">
-        <i class="fab fa-instagram"></i>
-      </button>
-      <button type="button" class="btn btn-lg btn-floating mx-3">
-        <i class="fab fa-twitter"></i>
-      </button>
+      <%= link_to "https://www.facebook.com/?locale=fr_FR", target: '_blank' do %>
+        <button type="button" class="btn  btn-lg btn-floating mx-3" >
+          <i class="fab fa-facebook-f"></i>
+        </button>
+      <%end %>
+      <%= link_to "https://www.youtube.com/?gl=FR&hl=fr", target: '_blank' do %>
+        <button type="button" class="btn  btn-lg btn-floating mx-3 hover-youtube">
+          <i class="fab fa-youtube"></i>
+        </button>
+      <%end %>
+      <%= link_to "https://www.instagram.com/", target: '_blank' do %>
+        <button type="button" class="btn btn-lg btn-floating mx-3 hover-instagram">
+          <i class="fab fa-instagram"></i>
+        </button>
+      <% end %>
+      <%= link_to "https://twitter.com/?lang=fr", target: '_blank' do %>
+        <button type="button" class="btn btn-lg btn-floating mx-3">
+          <i class="fab fa-twitter"></i>
+        </button>
+      <% end %>
     </div>
 
     <!-- Copyright -->
