@@ -19,21 +19,21 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "accepted"
     @booking.save
-    redirect_to profile_path
+    render_notifications
   end
 
   def deliver
     @booking = Booking.find(params[:id])
     @booking.status = "delivered"
     @booking.save
-    redirect_to profile_path
+    render_notifications
   end
 
   def reject
     @booking = Booking.find(params[:id])
     @booking.status = "rejected"
     @booking.save
-    redirect_to profile_path
+    render_notifications
   end
 
 
@@ -43,14 +43,15 @@ class BookingsController < ApplicationController
     redirect_to profile_path, status: :see_other
   end
 
-
-
-
-
   private
 
   def set_wine
     @wine = Wine.find(params[:wine_id])
   end
 
+  def render_notifications
+    respond_to do |format|
+      format.js { render partial: "notifications/notifications_partial", locals: { wines: current_user.wines } }
+    end
+  end
 end

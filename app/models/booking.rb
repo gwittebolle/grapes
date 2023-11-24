@@ -7,6 +7,7 @@ class Booking < ApplicationRecord
     accepted: 1,
     rejected: 2,
     delivered: 3,
+    canceled: 4
   }, _default: :created
 
 

@@ -1,1 +1,6 @@
-<%= image_tag "grape-logo.png", height: 30, width: 30, alt: "Logo" %>
+
+<% if user.avatar.attached? %>
+  <%= cl_image_tag user.avatar.key, class:"avatar"%>
+<% else %>
+  <%= image_tag("wine.png", class: "avatar", alt: "dropdown menu") %>
+<% end %>

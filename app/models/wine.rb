@@ -14,5 +14,4 @@ class Wine < ApplicationRecord
   validates :region, inclusion: { in: REGION }
   validates :category, inclusion: { in: %w[Blanc Rouge Rosé Autre] }
 
-
 end
