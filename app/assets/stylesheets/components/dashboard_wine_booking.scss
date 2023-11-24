@@ -33,22 +33,12 @@
   opacity: .7;
   margin: 0;
 }
-
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
+.card-trip-dark  {
+  .white-name {
+    color: white;
+  }
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -80px;
-  width: 40px;
-}
 
 .icon {
   color: $dark-grey;
@@ -61,10 +51,11 @@
     border-radius: 50%;
   }
 
-  .vignette {
+  .vignette img {
+    width: 100px;
+    height: auto;
+    padding: 10px;
     position: absolute;
-
-    z-index: 1;
-    height: 10px;
-    width: 10px;
+    top: 62px;
+    left: 20px;
 }
