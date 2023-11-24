@@ -6,7 +6,7 @@
       <h4> <%= booking.wine.name.capitalize%></h4>
     </div>
 
-     <%= booking.wine.photo.attached? ? cl_image_tag(booking.wine.photo.key, :crop => "fill") : image_tag('booking.png', width: 250, height: 250) %>
+     <%= booking.wine.photo.attached? ? cl_image_tag(booking.wine.photo.key, :crop => "fill") : image_tag('wine.png', width: 250, height: 250) %>
 
   <div class="card-trip-dark-infos">
 
