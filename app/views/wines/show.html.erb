@@ -30,7 +30,9 @@
         <div class="">
 
           <% if user_signed_in? %>
-            <%= link_to "Choisir", new_wine_booking_path(@wine, @booking), class:"btn btn-add "%>
+          <button class="btn btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Choisir
+          </button>
           <% else %>
           <div class="d-flex shadow-sm flex-column justify-content-center bg-light">
           <p>Disponible pour nos clients</p>
@@ -55,3 +57,6 @@
     </div>
   </div>
 </div>
+
+
+<%= render 'bookings/booking_modal' %>
