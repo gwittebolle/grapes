@@ -21,12 +21,10 @@
 
 
       <div class="">
-
-          <%= link_to '', wine_path(wine)%>
-           <%= link_to '', edit_wine_path(wine), class:"fa-solid fa-pen-to-square icon "%>
-           <%= link_to '', wine_path(wine), class: "mt-1 fa-solid fa-trash icon ",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer ce #{wine.name} de votre cave?"} %>
-
-        <div>
+        <%= link_to '', wine_path(wine), class:"fa-solid fa-heart"%>
+        <%= link_to '', edit_wine_path(wine), class:"fa-solid fa-pen-to-square icon "%>
+        <%= link_to '', wine_path(wine), class: "mt-1 fa-solid fa-trash icon ",  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment retirer ce #{wine.name} de votre cave?"} %>
+      <div>
 
         </div>
       </div>
