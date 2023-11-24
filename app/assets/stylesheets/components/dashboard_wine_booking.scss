@@ -11,9 +11,10 @@
   width: 250px;
   border-radius: 2%;
   padding: 20px;
+  padding-top: 10px;
   margin-bottom: 10%;
   color: $white;
-  position: relative;
+  // position: relative;
 }
 
 .card-trip-dark > img {
@@ -52,10 +53,16 @@
   }
 
   .vignette img {
-    width: 100px;
+    width: 70px;
     height: auto;
-    padding: 10px;
-    position: absolute;
-    top: 62px;
-    left: 20px;
+    // padding: 10px;
+
+}
+
+.icon-light {
+  color: $white;
+
+  &:hover {
+    color: $dark-grey;
+  }
 }
